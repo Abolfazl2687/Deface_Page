@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title> Hacked By Dark-Programmers </title>
+    <script>
+        var titleText = "Hacked By Dark-Programmers";
+        var isVisible = true;
+
+        function blinkTitle() {
+            if (isVisible) {
+                document.title = ""; // پاک کردن عنوان
+            } else {
+                document.title = titleText; // نمایش عنوان
+            }
+            isVisible = !isVisible; // تغییر وضعیت
+            setTimeout(blinkTitle, 750); // زمان تأخیر برای چشمک زدن
+        }
+
+        // شروع انیمیشن بعد از بارگذاری صفحه
+        window.onload = function() {
+            blinkTitle();
+        };
+    </script>
+</head>
+<link href="main.css" rel="stylesheet" type="text/css">
+<div class="text" align="center">HACKED By Dark-Programmers</div>
+<body>
+    <div class="bg-animation">
+        <div id="stars"></div>
+        <div id="stars2"></div>
+        <div id="stars3"></div>
+        <div id="stars4"></div>
+    </div>
+	<div class="typewriter">
+  		<h1 align="center">We have been here where the security is funny :)</h1>
+	</div>
+	<img  src="back.jpg" width="1280" height="720" alt="D-P"/>
+
+	<script type="text/javascript">
+class TextScramble {
+  constructor(el) {
+    this.el = el
+    this.chars = '~#!@$%^&*()_-=+{}:"|<>?,./;'
+    this.update = this.update.bind(this)
+  }
+  setText(newText) {
+    const oldText = this.el.innerText
+    const length = Math.max(oldText.length, newText.length)
+    const promise = new Promise((resolve) => this.resolve = resolve)
+    this.queue = []
+    for (let i = 0; i < length; i++) {
+      const from = oldText[i] || ''
+      const to = newText[i] || ''
+      const start = Math.floor(Math.random() * 40)
+      const end = start + Math.floor(Math.random() * 40)
+      this.queue.push({ from, to, start, end })
+    }
+    cancelAnimationFrame(this.frameRequest)
+    this.frame = 0
+    this.update()
+    return promise
+  }
+  update() {
+    let output = ''
+    let complete = 0
+    for (let i = 0, n = this.queue.length; i < n; i++) {
+      let { from, to, start, end, char } = this.queue[i]
+      if (this.frame >= end) {
+        complete++
+        output += to
+      } else if (this.frame >= start) {
+        if (!char || Math.random() < 0.28) {
+          char = this.randomChar()
+          this.queue[i].char = char
+        }
+        output += `<span class="silent">${char}</span>`
+      } else {
+        output += from
+      }
+    }
+    this.el.innerHTML = output
+    if (complete === this.queue.length) {
+      this.resolve()
+    } else {
+      this.frameRequest = requestAnimationFrame(this.update)
+      this.frame++
+    }
+  }
+  randomChar() {
+    return this.chars[Math.floor(Math.random() * this.chars.length)]
+  }
+}
+const phrases = [
+  'HACKED By Dark-Programmers',
+  'HACKED By Dark-Programmers',
+]
+const el = document.querySelector('.text')
+const fx = new TextScramble(el)
+let counter = 0
+const next = () => {
+  fx.setText(phrases[counter]).then(() => {
+    setTimeout(next, 3500)
+  })
+  counter = (counter + 1) % phrases.length
+}
+next()
+'use strict';
+var app = {
+  chars: [''],
+  init: function () {
+    app.container = document.createElement('div');
+    app.container.className = 'animation-container';
+    document.body.appendChild(app.container);
+    window.setInterval(app.add, 100);
+  },
+  add: function () {
+    var element = document.createElement('span');
+    app.container.appendChild(element);
+    app.animate(element);
+  },
+  animate: function (element) {
+    var character = app.chars[Math.floor(Math.random() * app.chars.length)];
+    var duration = Math.floor(Math.random() * 15) + 1;
+    var offset = Math.floor(Math.random() * (50 - duration * 2)) + 3;
+    var size = 10 + (15 - duration);
+    element.style.cssText = 'right:'+offset+'vw; font-size:'+size+'px;animation-duration:'+duration+'s';
+    element.innerHTML = character;
+    window.setTimeout(app.remove, duration * 100, element);
+  },
+  remove: function (element) {
+    element.parentNode.removeChild(element);
+  },
+
+};
+document.addEventListener('DOMContentLoaded', app.init);
+</script>
+
+	<footer align="center">
+		<a href="https://t.me/Dark_Programmers" title="Dark-Programmers" target="_blank">Telegram Channel : @Dark_Programmers</a>
+		<h3 align="center"> © 2024 Dark-Programmers </h3>
+	</footer>
+
+</body>
+</html>
